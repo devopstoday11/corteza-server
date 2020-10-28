@@ -36,12 +36,6 @@ import (
 	"time"
 )
 
-type (
-	storeUpgrader interface {
-		Upgrade(context.Context, *zap.Logger) error
-	}
-)
-
 const (
 	bootLevelWaiting = iota
 	bootLevelSetup
