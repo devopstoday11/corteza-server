@@ -1,6 +1,7 @@
 package app
 
 import (
+	federationCommands "github.com/cortezaproject/corteza-server/federation/commands"
 	"github.com/cortezaproject/corteza-server/pkg/cli"
 	systemCommands "github.com/cortezaproject/corteza-server/system/commands"
 )
@@ -45,6 +46,7 @@ func (app *CortezaApp) InitCLI() {
 		serveCmd,
 		upgradeCmd,
 		provisionCmd,
+		federationCommands.Sync(app),
 		cli.VersionCommand(),
 	)
 
