@@ -67,7 +67,7 @@ require (
 	github.com/steinfletcher/apitest v1.3.8
 	github.com/steinfletcher/apitest-jsonpath v1.3.0
 	github.com/stretchr/testify v1.6.1
-	github.com/titpetric/factory v0.0.0-20200620073058-2fa8933146e8
+	github.com/titpetric/factory v0.0.0-20200620073058-2fa8933146e8 // indirect
 	go.uber.org/atomic v1.6.0
 	go.uber.org/zap v1.15.0
 	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5
