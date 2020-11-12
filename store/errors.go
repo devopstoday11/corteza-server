@@ -27,7 +27,6 @@ func HandleError(err error, h ErrorHandler) error {
 	}
 
 	return errors.
-		Store("store error").
-		Apply(errors.StackSkip(1)).
-		Wrap(err)
+		Store("store error: %s", err.Error()).
+		Apply(errors.StackSkip(1))
 }
