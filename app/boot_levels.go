@@ -5,6 +5,8 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
+	"time"
+
 	cmpService "github.com/cortezaproject/corteza-server/compose/service"
 	cmpEvent "github.com/cortezaproject/corteza-server/compose/service/event"
 	fdrService "github.com/cortezaproject/corteza-server/federation/service"
@@ -34,7 +36,6 @@ import (
 	sysEvent "github.com/cortezaproject/corteza-server/system/service/event"
 	"go.uber.org/zap"
 	gomail "gopkg.in/mail.v2"
-	"time"
 )
 
 const (
@@ -242,7 +243,8 @@ func (app *CortezaApp) InitServices(ctx context.Context) (err error) {
 	// Note: this is a legacy approach, all services from all 3 apps
 	// will most likely be merged in the future
 	err = fdrService.Initialize(ctx, app.Log, app.Store, fdrService.Config{
-		ActionLog: app.Opt.ActionLog,
+		ActionLog:  app.Opt.ActionLog,
+		Federation: app.Opt.Federation,
 	})
 
 	if err != nil {
