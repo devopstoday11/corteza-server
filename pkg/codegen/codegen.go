@@ -55,6 +55,7 @@ func Proc() {
 				"unexport":        unexport,
 				"toggleExport":    toggleExport,
 				"toLower":         strings.ToLower,
+				"toUpper":         strings.ToUpper,
 				"cc2underscore":   cc2underscore,
 				"normalizeImport": normalizeImport,
 				"comment": func(text string, skip1st bool) string {
